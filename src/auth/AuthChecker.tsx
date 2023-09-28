@@ -12,7 +12,7 @@ const AuthChecker = ({ children } : Props ) => {
     //or not)
     //otherwise it sends them to the login route
     useEffect(() => {
-        if (auth.currentUser) {
+        if (!auth.currentUser) {
             navigate('../');
             signInWithPopup(auth, Providers.google);
         }
